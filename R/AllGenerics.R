@@ -18,12 +18,10 @@ detail<-function(x){
 ##' @name dplot
 ##' @rdname dplot-methods
 ##' @title detail plot
-##' @param object venn results
-##' @param ... addtional parameters
 ##' @return plot
 ##' @export
 ##' @author Kai Guo
-setGeneric("dplot",function(object,...){
+setGeneric("dplot",function(object,order=FALSE,...){
   standardGeneric("dplot")
 })
 ##' get generic
@@ -31,11 +29,45 @@ setGeneric("dplot",function(object,...){
 ##' @name get
 ##' @rdname get-methods
 ##' @title get detail
-##' @param x venn object
-##' @param ... additional parameters
 ##' @return return dataframe and print the header of dataframe
 ##' @export
 ##' @author Kai Guo
-setGeneric("get",function(object,...){
+setGeneric("get",function(object,group,...){
   standardGeneric("get")
 })
+##' rowjoin generic
+##' @name rowjoin
+##' @rdname rowjoin-methods
+##' @title join data.frame based on rownames
+##' @param x dataframe x
+##' @param y dataframe y
+##' @param fun join type
+##' @return dataframe with join results
+##' @export
+##' @author Kai Guo
+setGeneric("rowjoin",function(x,y,...){
+  standardGeneric("rowjoin")
+})
+##' getFeature generic
+##'
+##' @name getFeature
+##' @rdname getFeature-methods
+##' @title get feature based on venn results
+##' @return dataframe with all venn information and details from input
+##' @export
+##' @author Kai Guo
+setGeneric("getFeature",function(object,group, rlist, userowname=TRUE,gind=NULL,sep="_",...){
+  standardGeneric("getFeature")
+})
+##' vennpie generic
+##'
+##' @name vennpie
+##' @rdname vennpie-methods
+##' @title pie plot show shared and unique part
+##' @return plot
+##' @export
+##' @author Kai Guo
+setGeneric("vennpie",function(object,...){
+  standardGeneric("vennpie")
+})
+
